@@ -91,10 +91,10 @@ if mood == "Good" || time > 17 {
 */
 func stringToEmoji(word: String) -> Character {
     if word == "happy" {
-        return 😀
+        return "😀"
     }
     else {
-        return 🤔
+        return "🤔"
     }
 }
 /*:
@@ -132,16 +132,16 @@ Test your work by calling the function four times with four different words and 
 */
 func stringToEmojis(word: String) -> Character {
     if word == "happy" {
-        return 😀
+        return "😀"
     }
     else if word == "laughing" {
-        return 😆
+        return "😆"
     }
     else if word == "cool" {
-        return 😎
+        return "😎"
     }
     else {
-        return 🤔
+        return "🤔"
     }
 }
 
@@ -167,18 +167,19 @@ But there are a few details that need some work. While the emojis are good, you 
 */
 func stringChoicesToEmojis(word: String) -> Character {
     if word == "happy" || word == "good" || word == "okay" || word == "awesome" || word == "lit" || word == "fun" {
-        return 😀
+        return "😀"
     }
     else if word == "laughing" {
-        return 😆
+        return "😆"
     }
     else if word == "cool" {
-        return 😎
+        return "😎"
     }
     else {
-        return 🤔
+        return "🤔"
     }
 }
+
 
 
 print(stringChoicesToEmojis(word: "happy"))
