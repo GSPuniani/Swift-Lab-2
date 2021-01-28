@@ -19,6 +19,8 @@ maybeAnInt = nil
 When we retrieve the value from an optional, we say we "unwrap" it. This is like opening the box and seeing whether there's anything inside. We can test whether an optional has a value by comparing the whole thing to `nil`. If it is not equal to `nil`, it contains a value. Woo hoo!
 We can then safely use **force unwrapping** to get its value. Force unwrapping is done by putting an exclamation point (`!`) after the name of the variable we want to unwrap. This assures Swift that the optional contains a value and that it is therefore safe to read. If we're wrong, the code will crash. Here, we test whether `maybeAnInt` has a value and if it does, we rip open the box (force unwrap) and print its value.
 */
+maybeAnInt = 7
+
 if maybeAnInt != nil {
     print("maybeAnInt contains a value, and it is \(maybeAnInt!)")
 } else {
@@ -33,6 +35,8 @@ if maybeAnInt != nil {
 
 A more compact way of testing and acting on an optional value is **optional binding**, where we test for the presence of an object and, if it exists, we create a new variable for this object in a narrower scope. Here, we "bind" the value of `maybeAnInt` (if present) to a new constant named `definitelyAnInt`, which only exists inside the `if/else` block, and print it:
 */
+maybeAnInt = nil
+
 if let definitelyAnInt = maybeAnInt {
     print("maybeAnInt contains a value, and it is \(definitelyAnInt)")
 } else {
@@ -73,7 +77,8 @@ In order to call methods on optionals, you must first give Swift something that 
 /*:
  But we're programmers and we like working around the rules. You don't have to give Swift a non-optional if you use a technique called **optional chaining**. Chaining allows you to try to call a method on an optional, which calls the method if the optional has a value, and returns `nil` if it does not. Chaining is performed by placing a question mark between the variable name and the dot, parenthesis, or bracket that follows it:
 */
-let optionalArray: [Int]? = [ 1, 2, 3, 4 ]
+//let optionalArray: [Int]? = [ 1, 2, 3, 4 ]
+let optionalArray: [Int]? = nil
 let arrayLength = optionalArray?.count
 let firstElement = optionalArray?[0]
 /*:
@@ -130,12 +135,21 @@ In this Playground we have looked at some of the capabilities of optionals in Sw
 
 // Write your answers here:
 
+var username: String?
 
+print(username)
 
+username = "Gobind"
 
+print(username)
 
+print(username!)
 
+if let username = username {
+    print("Username: \(username)")
+}
+else {
+    print("The username cannot be retrieved at this time.")
+}
 
-
-
-
+var user = username ?? "Anonymous"
